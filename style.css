@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+  }
+
+  p {
+    margin: unset
+  }
+
+  #start {
+    background-color: #1a0202bf;
+    color: white;
+    padding: 2rem;
+    height: fit-content;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  label {
+    text-align: center;
+    margin: 2px;
+  }
+  #difficulty,
+  #playerspeed {
+    width: 12rem;
+    height: 2rem;
+    margin: 8px;
+  }
+  .btn {
+    color:white!important;
+    width: 12.5rem;
+    height: 2.4rem;
+    margin-top: 10px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+
+  #game {
+    height:100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgb(14, 7, 7);
+  }
+  
+  body {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.938),
+      rgba(255, 255, 255, 0.712)
+    ),
+    url("https://img.freepik.com/free-vector/flat-arabic-pattern-background_79603-1826.jpg?size=338&ext=jpg");
+  }
+  
+  #canvas {
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  #source {
+    display: none;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .modal-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; 
+    border-radius: 10px
+  }
+
+  .modalHowToPlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .modal-box-how-to {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+    border-radius: 10px
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }

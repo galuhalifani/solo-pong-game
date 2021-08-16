@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='style.css'/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- OPENING PAGE -->
+    <div id="start" style='text-align:center'>
+        <h2 style='color:white; margin-bottom:20px'>Solo Pong!</h2>
+
+        <form onsubmit="playGame(event)">
+          <label for="difficulty">Game Difficulty</label>
+          <select id="difficulty" name="difficulty">
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+          </select>
+
+          <label for="playerspeed">Player Speed</label>
+          <select id="playerspeed" name="playerspeed">
+            <option value='slow'>slow</option>
+            <option value='medium' selected>medium</option>
+            <option value='fast'>fast</option>
+          </select>
+
+          <div style='margin-bottom:10px'></div>
+          <button type="submit" class="btn btn-success">Play Game</button>
+        </form>
+          <button onclick='howToPlay()' class="btn btn-primary">How to Play</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalHowToPlay" class="modalHowToPlay">
+
+        <!-- Modal content -->
+        <div class="modal-box-how-to" style='align-items: unset;'>
+            <div style='margin-right:50px'>
+                <h3>ABOUT THE GAME</h3>
+                <p>Solo Pong is a solo ping-pong game in which player competes with time.</p>
+                <p>Player needs to keep the ball in the game area as long as the timer still runs. If player succeed to keep the ball within the game area throughout the alloted time, player wins. If the ball runs outside of the game area before the time is up, player loses.</p>
+                <br>
+                <h3>SETTING</h3>
+                <p>1. Game Difficulty determines the total time AND length of racket. The higher the difficulty, the longer the timer and the shorter the racket</p>
+                <p>2. Player Speed determines how fast the player's racket moves according to the controller</p>
+            </div>
+            <a href=# style='text-decoration: none;color:white'>
+                <span class="closeHowTo">&times;</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- TIMER -->
+    <div id='game'>
+        <div style='display:flex;margin-bottom:10px'>
+            <div style='display:flex;align-items: center;color:grey;margin-right: 20px'>
+                <i class="fas fa-gamepad" style='font-size: 12px;margin-top:2px'></i>
+                <a id=difficultyLabel style='font-size:13px;font-style: italic;color:darkgrey;padding:unset;padding-left:3px' class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </div>
+
+            <div style='display:flex;align-items: center;color:grey'>
+                <i class="fas fa-tachometer-alt" style='font-size: 12px;margin-top:2px'></i>
+                <a id=speedLabel class="nav-link disabled" style='font-size:13px;font-style: italic;color:darkgrey;padding:unset;padding-left:3px' href="#" tabindex="-1" aria-disabled="true"></a>
+            </div>
+        </div>
+          
+    <div style='display:flex'>
+        <p style='margin-right:10px;color:white'>Time Remaining: </p>
+        <p id="timer" style='color:red'></p>
+    </div>
+
+    <!-- GAME -->
+    <canvas id='canvas' width='400' height='400' style="border:1px solid #000000;"></canvas>
+
+    <img src="https://www.pngkit.com/png/full/284-2843649_ping-pong-paddle-png-ping-pong-racket-png.png" alt="" id="source">
+
+    <div style='width:400px;display:flex;justify-content:space-around;margin-top:10px'/>
+    <button id='startButton' class="btn btn-success" style='width:30%;font-size:15px' onclick="startGame()"> Start</button>
+    <button id='stopButton' class="btn btn-danger" style='width:30%;font-size:15px' onclick="stopGame()"> Stop</button>
+    <button id='toHomeButton' class="btn btn-secondary" style='width:30%;font-size:15px' onclick="toHome()"> Home</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-box">
+          <p id='modalWin' style="font-size:22px;display:none;margin-bottom:unset">You Win! 🎉</p>
+          <p id='modalLose' style="font-size:22px;display:none;margin-bottom:unset">You Lose! 👻</p>
+          <span class="close">&times;</span>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src='./script.js'></script>
+</body>
+</html>
