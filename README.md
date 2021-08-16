@@ -13,4 +13,4 @@ Player needs to keep the ball in the game area as long as the timer still runs. 
 ```HTML```
 ```HTML5 - Canvas```
 ```CSS + Bootstrap```
-```Canvas```
+```JQuery, JS DOM```
