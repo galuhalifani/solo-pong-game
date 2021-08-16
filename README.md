@@ -7,7 +7,7 @@ Player needs to keep the ball in the game area as long as the timer still runs. 
 **Visit the [Game](http://solo-pong-game.s3-website-us-east-1.amazonaws.com)**
 
 ### Development Scope
-**Scope**: Fullstack
+**Scope**: Frontend (no backend/server needed)
 
 ### Tech Stacks
 ```HTML```
