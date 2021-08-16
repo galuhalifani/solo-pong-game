@@ -53,7 +53,11 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: auto;
     margin-bottom: auto;
-    background-color: rgb(14, 7, 7);
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.794),
+      rgba(255, 255, 255, 0.342)
+    ),
+    url("https://img.freepik.com/free-vector/flat-arabic-pattern-background_79603-1826.jpg?size=338&ext=jpg");
   }
   
   body {
