@@ -22,7 +22,7 @@
             <option value="hard">hard</option>
           </select>
 
-          <label for="playerspeed">Player Speed</label>
+          <label for="playerspeed">Racket Speed</label>
           <select id="playerspeed" name="playerspeed">
             <option value='slow'>slow</option>
             <option value='medium' selected>medium</option>
@@ -44,14 +44,15 @@
                 <div style='background-color: rgb(253, 246, 184);padding:15px;border-radius: 10px;color:black'>
                     <h3>ABOUT THE GAME</h3>
                     <p>Solo Pong is a solo ping-pong game in which player competes with time.</p>
-                    <p>Player needs to keep the ball in the game area as long as the timer still runs. If player succeed to keep the ball within the game area throughout the alloted time, player wins. If the ball runs outside of the game area before the time is up, player loses.</p>    
+                    <p>This game is playable only <b>on Desktop</b> or devices with keyboard</p>
+                    <p>Player needs to keep the ball in the game area <b>as long as the timer still runs</b>. If player succeed to keep the ball within the game area throughout the allocated time, <b>player wins</b>. If the ball runs outside of the game area before the time is up, <b>player loses.</b></p>    
                 </div>
                 <br>
                 <div style='background-color: rgb(185, 176, 150);padding:15px;border-radius: 10px;color:black'>
-                    <h3>SETTINGS</h3>
-                    <p>1. Game Difficulty determines the total time AND length of racket. The higher the difficulty, the longer the timer and the shorter the racket</p>
-                    <p>2. Player Speed determines how fast the player's racket moves according to the controller</p>
-                    <p>3. To play, click "Play Game" > "Start". Move the stick racket using your up and down keyboard arrow</p>
+                    <h3>SETTINGS & HOW TO PLAY</h3>
+                    <p><b>1. Game Difficulty</b> determines the total time AND length of racket. The higher the difficulty, the longer the timer and the shorter the racket</p>
+                    <p><b>2. Player Speed</b> determines how fast the player's racket moves according to the controller</p>
+                    <p><b>3. To move stick racket:</b> use your up and down <b>keyboard arrow</b></p>
                 </div>
             </div>
             <a href=# style='text-decoration: none;color:white'>
@@ -85,9 +86,10 @@
     <img src="https://www.pngkit.com/png/full/284-2843649_ping-pong-paddle-png-ping-pong-racket-png.png" alt="" id="source">
 
     <div style='width:400px;display:flex;justify-content:space-around;margin-top:10px'/>
-    <button id='startButton' class="btn btn-success" style='width:30%;font-size:15px' onclick="startGame()"> Start</button>
-    <button id='stopButton' class="btn btn-danger" style='width:30%;font-size:15px' onclick="stopGame()"> Stop</button>
-    <button id='toHomeButton' class="btn btn-secondary" style='width:30%;font-size:15px' onclick="toHome()"> Home</button>
+    <button id='startButton' class="btn btn-success" style='width:20%;font-size:15px' onclick="startGame()"> Start</button>
+    <button id='stopButton' class="btn btn-danger" style='width:20%;font-size:15px' onclick="stopGame()"> Stop</button>
+    <button onclick='howToPlay()' style='width:30%;font-size:15px;padding:unset' class="btn btn-primary">How To Play</button>
+    <button id='toHomeButton' class="btn btn-secondary" style='width:20%;font-size:15px' onclick="toHome()"> Home</button>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
